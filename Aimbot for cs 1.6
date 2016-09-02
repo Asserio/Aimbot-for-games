@@ -1,0 +1,36 @@
+#include <Misc.au3>
+#include <MsgBoxConstants.au3>
+#include <ButtonConstants.au3>
+#include <GUIConstantsEx.au3>
+#include <WindowsConstants.au3>
+#include <AutoItConstants.au3>
+
+HotKeySet("!e", "Terminate")
+HotKeySet("!t", "AimbotT")
+
+MsgBox(0,"Credits","Made by EVO")
+
+Func Terminate()
+   MsgBox(0, "Exit", "Thanks for using my Aimbot")
+   Exit
+EndFunc
+
+Func AimbotT()
+MsgBox(0, " Aimbot", " Aimbot is running!")
+While 1
+	  ;0x112E4E
+	  If _IsPressed("02") Then
+		 $point = PixelSearch(937, 520, 980, 560, 0x0B0C0D, 5, 1)
+		 If IsArray($point) Then
+		 MouseMove($point[0], $point[1], 1)
+		 ;MouseClick("left", $point[0],$point[1])
+	  EndIf
+	  Sleep(5)
+	  EndIf
+
+WEnd
+EndFunc
+
+While 1
+   Sleep(100)
+WEnd
